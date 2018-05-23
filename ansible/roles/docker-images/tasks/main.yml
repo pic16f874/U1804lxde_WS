@@ -1,0 +1,51 @@
+---
+# Requirements:
+#   python >= 2.6
+#   docker-py >= 1.7.0
+#   Docker API >= 1.20
+# See http://docs.ansible.com/ansible/latest/docker_image_module.html#docker-image
+
+- name: Install EPEL repository (version {{ epel_repo_version }})
+  package:
+    name: epel-release-{{ epel_repo_version }}
+    state: present
+
+- name: Install PIP package
+  package:
+    name: python-pip
+    state: latest
+
+- name: Install docker-compose (version {{ docker_compose_version }})
+  pip:
+    name: docker-compose
+    version: "{{ docker_compose_version }}"
+
+- name: Install docker-py (version {{ docker_py_version }})
+  pip:
+    name: docker-py
+    version: "{{ docker_py_version }}"
+
+- name: Pull Nginx image (version {{ nginx_version }})
+  docker_image:
+    name: nginx
+    tag: "{{ nginx_version }}"
+
+#- name: Pull Jenkins image (version {{ jenkins_version }})
+#  docker_image:
+#    name: jenkins/jenkins
+#    tag: "{{ jenkins_version }}"
+
+- name: Pull PostgreSQL image (version {{ postgres_version }})
+  docker_image:
+    name: postgres
+    tag: "{{ postgres_version}}"
+
+- name: Copy local Docker-compose file to remote
+  template:
+    src: "{{ docker_compose_file_jinja }}"
+    dest: "{{ docker_compose_dir }}/{{ docker_compose_file }}"
+
+#- name: Run all Docker images via Docker-compose
+#  docker_service:
+#    project_src: "{{ docker_compose_dir }}"
+#    state: present

@@ -1,1 +1,1 @@
-# U1804lxde_WS
+Set of scripts for install Ubuntu 18.04 workstation

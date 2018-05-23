@@ -1,0 +1,51 @@
+---
+# Install docker using this guide:
+# https://docs.docker.com/engine/installation/linux/docker-ce/centos/#install-using-the-repository
+- name: Uninstall the old version of Docker
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - docker-selinux
+    - docker-engine
+
+- name: Install the latest versions of required packages for setting up the Docker repository
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - thin-provisioning-tools
+    - lvm2
+
+- name: Set up the stable Docker repository
+  command: yum-config-manager --add-repo {{ docker_repo }}
+
+- name: Install the Docker CE (version {{ docker_version }})
+  package:
+    name: docker-ce-{{ docker_version }}
+    state: latest
+
+- name: Create a few directories that we will use later
+  file:
+    name: "{{ item }}"
+    state: directory
+  with_items:
+    - /etc/docker
+    - /opt/docker
+    - /opt/docker-compose
+
+- name: Create a  {{ daemon_json_file }}
+  shell: "{{ item }}"
+  with_items:
+    - echo "{" > {{ daemon_json_file }}
+    - echo "\"data-root\"{{semicol}} \"/opt/docker\", " >> {{ daemon_json_file }}
+    - echo "\"storage-driver\"{{semicol}}  \"devicemapper\"" >> {{ daemon_json_file }}
+    - echo "}" >> {{ daemon_json_file }}
+
+- name: Start and enable Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes 

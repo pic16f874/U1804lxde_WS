@@ -1,0 +1,79 @@
+---
+
+- name: Install   C O M M O N   packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - tree
+     - nano
+     - mc
+     - htop
+     - p7zip-full
+     - curl
+     - gawk
+     - terminator
+     - kdiff3
+     - baobab
+
+- name: Install   N E T W O R K   packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - net-tools
+     - telnet
+     - links
+     - ssh
+     - screen
+     - remmina
+     - vsftpd
+#   edit vsftpd.conf
+#
+# sudo mkdir /home/ftp
+# sudo usermod -d /home/ftp ftp 
+# sudo systemctl restart vsftpd.service
+
+- name: Install   G I T   packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - git
+     - gitk
+# create file if not found 
+# ~/.gitconfig 
+#[user]
+#	email = pic16f874@ukr.net
+#	name = Nick Ivanov
+
+
+
+- name: Install   D O C K E R  packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - docker
+     - docker-compose
+
+- name: Install   O F F I C E  packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - keepassx
+     - mysql-workbench
+     - pgadmin3
+     - libreoffice
+     - mousepad
+     
+#fairjail geany gimp teamviewer eclipse genymotion kdiff3 remarkable baobab skype telegramm
+# virtualbox
+# plsqldeveloper
+

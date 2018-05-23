@@ -1,0 +1,44 @@
+---
+- name: Create a few directories that we will use later
+  file:
+    name: "{{ item }}"
+    state: directory
+  with_items:
+    - "$HOME/ftp"
+    - "$HOME/git"
+    - "$HOME/Desktop"
+    - "$HOME/Downloads"
+    - "$HOME/Templates"
+    - "$HOME/Public"
+    - "$HOME/Documents"
+    - "$HOME/Music"
+    - "$HOME/Pictures"
+    - "$HOME/Videos"
+    - "$HOME/.config"
+
+- name: overwrite file $HOME/.config/user-dirs.dirs
+  shell: "{{ item }}"
+  with_items:
+    - echo "#" >> $HOME/.config/user-dirs.dirs
+    - echo "#added by ansible" >> $HOME/.config/user-dirs.dirs
+    - echo "#" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_DESKTOP_DIR=\"\$HOME/Desktop\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_DOWNLOAD_DIR=\"\$HOME/Downloads\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_TEMPLATES_DIR=\"\$HOME/Templates\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_PUBLICSHARE_DIR=\"\$HOME/Public\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_DOCUMENTS_DIR=\"\$HOME/Documents\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_MUSIC_DIR=\"\$HOME/Music\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_PICTURES_DIR=\"\$HOME/Pictures\"" >> $HOME/.config/user-dirs.dirs
+    - echo "XDG_VIDEOS_DIR=\"\$HOME/Videos\"" >>  $HOME/.config/user-dirs.dirs
+    - echo "XDG_GIT_DIR=\"\$HOME/git\"" >>  $HOME/.config/user-dirs.dirs
+#      register: db_dismounted
+
+
+#- name: Print dismounted {{ db_code }} database (instance {{ db_instance }})
+#  debug:
+#    msg:
+#          - "{{ db_dismounted }}"
+#          - "{{ db_dismounted.results[6].stdout_lines }}"
+
+
+

@@ -1,0 +1,25 @@
+---
+
+- name: Install  VIRTUAL BOX   packages
+  package:
+     use: apt
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - virtualbox
+
+- name: Modify VBoxMashineFolder
+  shell: "{{ item }}"
+  become: no
+  with_items:
+    - vboxmanage setproperty machinefolder /storage/VBoxVMs
+  register: vboxmashinefolder
+
+- name: Print result
+  debug:
+    msg:
+#      - "{{ vboxmashinefolder }}"
+      - "stderr {{ vboxmashinefolder.results[0].stderr_lines }}"
+      - "stdout {{ vboxmashinefolder.results[0].stdout_lines }}"
+
+

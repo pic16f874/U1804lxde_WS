@@ -1,0 +1,21 @@
+---
+# Create a few directories that we will use later
+
+- name: Create a few directories that we will use later
+  user:
+        name: kivanov
+        shell: /bin/bash
+#        groups: wheel,technics
+        groups: sudo,docker  
+        append: yes
+
+- name: Create a few directories that we will use later
+  user:
+        name: ftp
+#ubuntu
+        shell: /usr/sbin/nologin
+#ami
+#        shell: /sbin/nologin
+        groups: wheel,technics
+        append: yes
+

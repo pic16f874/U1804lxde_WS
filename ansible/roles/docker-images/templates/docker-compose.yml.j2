@@ -1,0 +1,13 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:{{ nginx_version }}
+    container_name: nginx
+    hostname: nginx
+    ports:
+      - 80:80
+#    volumes:
+#      - /opt/prometheus/etc/prometheus.yml:/etc/prometheus/prometheus.yml
+#      - /opt/prometheus/data/:/prometheus/data/
+#    command: "-config.file=/etc/prometheus/prometheus.yml -storage.local.retention=2160h -storage.local.series-file-shrink-ratio=0.3"
+    restart: unless-stopped

@@ -1,0 +1,5 @@
+---
+docker_repo: https://download.docker.com/linux/centos/docker-ce.repo
+docker_version: 17.09.0.ce-1.el7.centos
+daemon_json_file: /etc/docker/daemon.json
+semicol: ":"

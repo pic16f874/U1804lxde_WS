@@ -1,0 +1,22 @@
+---
+# Install useful packages
+
+- name: Install useful packages
+  package:
+     use: yum
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - java
+
+# https://www.vultr.com/docs/how-to-install-jenkins-on-centos-7
+#yum install java
+#java -version
+#sudo cp /etc/profile /etc/profile-`date +%Y%m%d.%H%M%S`
+
+#echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' | sudo tee -a /etc/profile
+#echo 'export JRE_HOME=/usr/lib/jvm/jre' | sudo tee -a /etc/profile
+#source /etc/profile
+
+#echo $JAVA_HOME
+#echo $JRE_HOME

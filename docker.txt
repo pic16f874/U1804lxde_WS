@@ -1,0 +1,393 @@
+sudo yum install -y yum-utils   device-mapper-persistent-data   lvm2
+sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+yum list docker-ce --showduplicates | sort -r
+yum install docker-ce-17.12.0.ce
+
+systemctl status docker
+
+mkdir -p /etc/docker
+mkdir -p /opt/docker
+echo "{ \"data-root\": \"/opt/docker\", " > /etc/docker/daemon.json
+echo "  \"storage-driver\": \"devicemapper\" }" >> /etc/docker/daemon.json
+
+systemctl enable docker
+
+#export ANSIBLE_FORCE_COLOR=true
+
+############################################################################################################
+
+sudo yum install -y yum-utils   device-mapper-persistent-data   lvm2
+  359  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+  360  yum list docker-ce --showduplicates | sort -r
+  361  yum install 17.12.0.ce
+  362  yum install docker-ce-17.12.0.ce
+  363  systemctl start docker
+  364  systemctl status docker
+  365  ls
+  369  systemctl status docker
+  370  systemctl stop docker
+  371  nano /lib/systemd/system/docker.service
+  372  rsync -aqxP /var/lib/docker/ /opt/docker
+  373  mc
+  374  rsync -aqxP /var/lib/docker/ /opt/docker
+  375  systemctl start docker
+  376  systemctl daemon-reload
+  377  systemctl start docker
+  378  systemctl status docker
+  379  mc
+  380  systemctl daemon-reload
+  381  systemctl start docker
+  389  ps aux | grep -i docker | grep -v grep
+  390  nano /lib/systemd/system/docker.service
+  394  journalctl -u docker
+  395  nano /lib/systemd/system/docker.service
+  396  systemctl daemon-reload
+  397  journalctl -u docker
+  429  cat /etc/yum.conf 
+  430  clear
+  431  cat /etc/yum.conf 
+  432  du -h /opt
+  433  mc
+  439  docker info
+  440  mc
+  441  yum install epel-release
+  442  yum install -y python-pip
+  443  pip install docker-compose
+  444  yum upgrade python*
+  445  pip install docker-compose
+  446  cat yum.conf
+  447  cat /etc/yum.conf
+  448  find / -name pip.ini
+  449  pip install --proxy=http://10.101.10.240:3128 docker-compose
+  450  docker-compose ps
+  451  mc
+  452  docker images 
+  453  docker load < /opt/docker-builds/ens/centos_6.tar 
+  454  docker images 
+  455  nano
+  456  docker -f Dockerfile1 build --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  457  docker build help
+  458  docker build --help
+  459  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  460  nano Dockerfile1 
+  461  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  462  nano Dockerfile1 
+  463  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  464  nano Dockerfile1 
+  465  docker images
+  466  docker images rm 0954005e70c6 74debed021d9 49c414bce05c
+  467  docker image rm 0954005e70c6 74debed021d9 49c414bce05c
+  468  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  469  nano Dockerfile1 
+  470  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  471  nano Dockerfile1 
+  472  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  473  nano Dockerfile1 
+  474  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  475  nano Dockerfile1 
+  476  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  477  nano Dockerfile1 
+  478  yum install vsptpd
+  479  yum install vsftpd
+  480  mc
+  481  nano Dockerfile1 
+  482  find / -name Dockerfile1 
+  483  mc
+  484  cd /opt/
+  485  ls
+  486  cd docker-builds/
+  487  ls
+  488  cd ens/
+  489  ls
+  490  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  491  mc
+  492  docker network 
+  493  docker network ls
+  494  docker network inspect 
+  495  docker network inspect bridge
+  496  ifconfig
+  497  curl ftp://172.17.0.1/pub
+  498  mc
+  499  nano /etc/vsftpd/
+  500  nano /etc/vsftpd/vsftpd.conf 
+  501  systemctl status vsftpd.service 
+  502  systemctl start vsftpd.service 
+  503  systemctl status vsftpd.service 
+  504  mc
+  505  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  506  nano Dockerfile1 
+  507  docker images
+  508  docker image rm fbfb364c1108 8a1ca186ae74 ea4858f1022f fb45494ebedd c2f20bf5cc99
+  509  docker images
+  510  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  511  docker images
+  512  docker exec -it d1f2fae448ad /bin/bash
+  513  docker ps
+  514  docker ps -a
+  515  docker rm agitated_golick
+  516  docker run --privileged -rm - name test d1f2fae448ad
+  517  docker run --privileged --rm --name test d1f2fae448ad
+  518  docker ps -a
+  519  docker run --privileged --rm  d1f2fae448ad
+  520  docker run --detach --rm --privileged --name=ens-inst d1f2fae448ad
+  521  docker ps -a
+  522  docker ps
+  523  mc
+  524  curl ftp://172.17.0.1/ensemble-2017.2.0.744.0-lnxrhx64.tar.gz
+  525  curl ftp://172.17.0.1/ensemble-2017.2.0.744.0-lnxrhx64.tar.gz -o ensemble-2017.2.0.744.0-lnxrhx64.tar.gz 
+  526  ls
+  527  curl ftp://172.17.0.1/ensemble-2017.2.0.744.0-lnxrhx64.tar.gz -o ensemble
+  528  curl ftp://172.17.0.1/pub/ensemble-2017.2.0.744.0-lnxrhx64.tar.gz -o ensemble
+  529  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  530  nano Dockerfile1 
+  531  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  532  curl ftp://172.17.0.1/pub/ensemble-2017.2.0.744.0-lnxrhx64.tar.gz -o ensemble
+  533  nano Dockerfile1 
+  534  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  535  curl ftp://172.17.0.1/pub/
+  536  docker images
+  537  docker run -it --rm --privileged --name=ens-inst 6e76a389effb
+  538  docker ps
+  539  nano Dockerfile1 
+  540  docker ps
+  541  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  542  docker images
+  543  docker run -it --rm --privileged --name=ens-inst 0e862e2eba60
+  544  nano Dockerfile1 
+  545  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  546  docker images
+  547  docker run -it --rm --privileged --name=ens-inst 3f8f46384042
+  548  nano Dockerfile1 
+  549  systemctl status firewalld.service 
+  550  systemctl stop firewalld.service 
+  551  docker run -it --rm --privileged --name=ens-inst 3f8f46384042
+  552  nano Dockerfile1 
+  553  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  554  nano Dockerfile1 
+  555  docker  build -f Dockerfile1 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0 .
+  556  nano Dockerfile1 
+  557  docker images
+  558  docker image rm  d1f2fae448ad  79fb804a148e  baa3c651974f  6e76a389effb  0e862e2eba60  3f8f46384042   1ff59fca5f27 
+  559  docker images
+  560  docker run -it --rm --privileged --name=ens-inst 040c520d7849
+  561  nano Dockerfile1 
+  562  docker run -it --rm --privileged --name=ens-inst 040c520d7849
+  563  systemctl start firewalld.service 
+  564  systemctl status firewalld.service 
+  565  docker run -it --rm --privileged --name=ens-inst 040c520d7849
+  566  nano Dockerfile1 
+  567  docker images
+  568  firewalld
+  569  firewall-cmd --list-all 
+  570  route -n
+  571  nano Dockerfile1 
+  572  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t C6/FwD-test:1 .
+  573  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t C6/FwD:1 .
+  574  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  575  nano Dockerfile-fw-d 
+  576  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t C6/FwD:1 .
+  577  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  578  firewall-cmd --list-all 
+  579  systemctl status firewalld.service 
+  580  systemctl restart docker.service 
+  581  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  582  systemctl restart firewalld.service 
+  583  systemctl status firewalld.service 
+  584  systemctl restart docker.service 
+  585  systemctl status firewalld.service 
+  586  systemctl stop docker.service 
+  587  systemctl start firewalld.service 
+  588  systemctl status firewalld.service 
+  589  journalctl -ufirewalld
+  590  systemctl start firewalld.service 
+  591  journalctl -xe
+  592  exit
+  593  reboot
+  594  systemctl status firewalld.service 
+  595  systemctl status docker.service 
+  596  systemctl start docker.service 
+  597  systemctl status docker.service 
+  598  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  599  cd /opt/docker-builds/
+  600  ls
+  601  cd ens/
+  602  ls
+  603  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  604  docker images
+  605  docker images rm 040c520d7849  d4c9c2c8f25d  fbf2592a2b72  9693af5d0e3e 
+  606  docker image rm 040c520d7849  d4c9c2c8f25d  fbf2592a2b72  9693af5d0e3e 
+  607  docker images
+  608  docker run -it --rm --privileged --name=test 9604cc224894 
+  609  nano Dockerfile-fw-d
+  610  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  611  nano Dockerfile-fw-d
+  612  docker images
+  613  docker run -it --rm --privileged --name=test 5ccfc395a9a7
+  614  nano Dockerfile-fw-d
+  615  docker run -it --rm --privileged --name=test 5ccfc395a9a7
+  616  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  617  nano Dockerfile-fw-d
+  618  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  619  nano Dockerfile-fw-d
+  620  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  621  nano Dockerfile1
+  622  nano Dockerfile-fw-d
+  623  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  624  nano Dockerfile-fw-d
+  625  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  626  nano Dockerfile-fw-d
+  627  docker  build -f Dockerfile-fw-d --no-cache --force-rm -t c6/fw-d:1 .
+  628  nano Dockerfile-fw-d
+  629  mc
+  630  ls
+  631  docker load < di-ensemble_2017.2.0.744.0.tar
+  632  docker images
+  633  nano Dockerfile-fw-d
+  634  docker image rm 9604cc224894 5ccfc395a9a7 deffa999c10c c709ed2dadb8 51bad7de1aa4 
+  635  docker images
+  636  docker image rm f159cc061ef7
+  637  docker run -it --rm --privileged --name=test di/ensemble:2017.2.0.744.0
+  638  docker run -d --rm --privileged --name=test di/ensemble:2017.2.0.744.0
+  639  docker logdi/ensemble:2017.2.0.744.0
+  640  docker log di/ensemble:2017.2.0.744.0
+  641  docker log 
+  642  docker log test
+  643  docker log --help
+  644  docker logs --help
+  645  docker logs -f test
+  646  docker exec -it test /bin/bash
+  647  docker images
+  648  ls
+  649  cd ens/
+  650  ls
+  651  nano Dockerfile2
+  652  docker build 
+  653  docker build --help
+  654  history | grep docker build
+  655  history | grep "docker build"
+  656  #docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  657  nano Dockerfile2
+  658  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  659  systemctl status firewalld.service
+  660  systemctl stop firewalld.service
+  661  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  662  nano Dockerfile2
+  663  mc
+  664  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  665  cd /opt/docker-builds/
+  666  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  667  cd /opt/docker-builds/ens/
+  668  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  669  systemctl restart docker 
+  670  systemctl status docker 
+  671  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  672  docker images
+  673  docker images rm 36eb335443d3 1a111980f46e f55d4a1d309a 
+  674  docker image rm 36eb335443d3 1a111980f46e f55d4a1d309a 
+  675  docker images
+  676  docker run -d --rm --privileged --name=test 34550aad21ca
+  677  docker exec -it test /bin/bash
+  678  systemctl status firewalld.service 
+  679  docker exec -it test /bin/bash
+  680  curl ftp://172.17.0.1/pub
+  681  systemctl status vsftpd.service 
+  682  systemctl start vsftpd.service 
+  683  systemctl status vsftpd.service 
+  684  curl ftp://172.17.0.1/pub
+  685  curl ftp://172.17.0.1/pub/
+  686  docker exec -it test /bin/bash
+  687  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  688  docker images
+  689  docker run -d --rm --privileged --name=test 183e2930e6ee
+  690  docker ps
+  691  docker stop test
+  692  docker ps
+  693  docker ps -a
+  694  docker run -d --rm --privileged --name=test 183e2930e6ee
+  695  docker exec -it test /bin/bash
+  696  cat Dockerfile2
+  697  docker exec -it test /bin/bash
+  698  nano Dockerfile2
+  699  docker exec -it test /bin/bash
+  700  nano Dockerfile2
+  701  docker stop test
+  702  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  703  nano Dockerfile2
+  704  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  705  docker images
+  706  docker run -d --rm --privileged --name=test 54dec8584b49
+  707  docker exec -it test /bin/bash
+  708  mc
+  709  mcedit script.txt 
+  710  docker exec -it test /bin/bash
+  711  docker stop test
+  712  docker images
+  713  docker image rm 54dec8584b49 5f19044ea2da 183e2930e6ee  34550aad21ca 
+  714  cd /opt/docker-builds/
+  715  cd ens/
+  716  ls
+  717  nano Dockerfile2
+  718  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  719  nano Dockerfile2
+  720  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  721  docker images
+  722  nano Dockerfile2
+  723  docker run -d --rm --privileged --name=test b4d862758f8d 
+  724  docker exec -it test /bin/bash
+  725  nano Dockerfile2
+  726  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  727  nano Dockerfile2
+  728  docker build -f Dockerfile2 --no-cache --force-rm -t di/ensemble:2017.2.0.744.0.2 .
+  729  ls
+  730  docker images
+  731  docker image rm 752e9c3746f1 b4d862758f8d a50a7b541d93 
+  732  docker ps
+  733  docker stop  b4d862758f8d 
+  734  docker stop  test
+  735  docker image rm b4d862758f8d 
+  736  mc
+  737  systemctl status firewalld.service 
+  738  systemctl start firewalld.service 
+  739  systemctl status firewalld.service 
+  740  docker ps
+  741  docker ps -a
+  742  docker images
+  743  mc
+  744  exit
+  745  OA
+  746  OAOA
+  747  history
+  748  mc
+  749  stat /etc/docker/daemon.json
+  750  cat /etc/docker/daemon.json
+
+
+
+
+
+###########################################################
+# https://stackoverflow.com/questions/34684959/how-to-serve-two-web-applications-behind-an-nginx-reverse-proxy
+# https://gist.github.com/soheilhy/8b94347ff8336d971ad0
+###########################################################
+
+server {
+    listen       80;
+
+    location / {
+                   if ($http_referer ~* (/jenkins) ) {
+                       proxy_pass http://172.17.0.1:8080;
+                    }
+    }
+    location /jenkins {
+                  rewrite ^/jenkins(.*) /$1 break;
+                  proxy_pass http://172.17.0.1:8080;
+#                  proxy_redirect off;
+#                  proxy_set_header Host $host;
+#                  proxy_set_header X-Real-IP $remote_addr;
+#                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#                  proxy_set_header X-Forwarded-Proto $scheme;
+
+    }
+
+
+}
