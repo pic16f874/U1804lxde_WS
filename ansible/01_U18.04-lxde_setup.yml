@@ -4,7 +4,8 @@
   roles:
 #    - create-user  ftp
 #    - 01_create-dirs   ftp
-#    - 02_install-packages
-    - 03_install-VBox
+    - 02_install-packages
+#    - 03_install-VBox
+#    - 04_oracle_java
 #    - docker-install
 #    - docker-images

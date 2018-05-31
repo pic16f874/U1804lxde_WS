@@ -16,6 +16,6 @@
         shell: /usr/sbin/nologin
 #ami
 #        shell: /sbin/nologin
-        groups: wheel,technics
+#        groups: wheel,technics
         append: yes
 

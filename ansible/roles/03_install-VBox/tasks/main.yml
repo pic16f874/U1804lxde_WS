@@ -1,5 +1,5 @@
 ---
-
+   
 - name: Install  VIRTUAL BOX   packages
   package:
      use: apt
@@ -21,5 +21,4 @@
 #      - "{{ vboxmashinefolder }}"
       - "stderr {{ vboxmashinefolder.results[0].stderr_lines }}"
       - "stdout {{ vboxmashinefolder.results[0].stdout_lines }}"
-
 

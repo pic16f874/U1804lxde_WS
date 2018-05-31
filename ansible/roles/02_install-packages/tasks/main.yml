@@ -72,8 +72,12 @@
      - pgadmin3
      - libreoffice
      - mousepad
-     
+#     - remarkable
+     - gimp
+     - xfce4-screenshooter
 #fairjail geany gimp teamviewer eclipse genymotion kdiff3 remarkable baobab skype telegramm
 # virtualbox
 # plsqldeveloper
+
+#wget  https://remarkableapp.github.io/files/remarkable_1.87_all.deb
 
